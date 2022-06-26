@@ -1,0 +1,63 @@
+                    angular -front end development
+
+             Basic command
+
+        1.to create project - ng new project-name/ng new project-name --routing
+
+        2.to run a project - ng serve /ng serve --opem
+
+        3.to create component - ng g c component -name
+
+        4.// open folder in src service and then  to create servics - ng g s service -name 
+
+
+                Basuic Concepts
+
+        1.Component -to create {html,css,file} root component -App component
+
+        2.Module - to add libraries to the project root module - AppModule
+
+        3.Data Binding - data sharing between html and ts
+
+             3.1 One way Binding
+                
+               3.1.1 component(ts) to view(html)
+
+                 3.1.1.1  string Interpolation :syntax -{{variable-name}}
+
+                 3.1.1.2  Property Binding : syntax - [attribute]="variable-name"
+
+              3.1.2 view(html) to component(ts)
+
+                 3.1.2.1  Event Binding -(event)="function-call()"
+
+                 3.1.2.2 Event Binding using $event-(event)="function-call($event)"
+
+                 3.1.2.3 Template referencing variable-synatx:#variable-name 
+
+            3.2 Two way Binding
+
+              3.2.1 using ngModel -Import FormsModule in AppModule,synatx-{(ngModel)}="variable-name"   
+
+
+        4.To setup path for a component : defined in App Routing Module
+                syntax:{path:'',componenet:componenetClassName} 
+
+        5. Dependency Injection - to share data between classes        
+
+        6.Angular servics - for reduntant data or to reuse data
+
+        7.ngSubmit - to submit entire form syntax: (ngSubmit)="function-call"
+
+        8.Angular Forms
+
+                8.1 Template driven Forms-irst design html
+
+                8.2 Model Driven Forms - first create model in ts
+
+                        8.2.1 Reactive Forms-Add validation: Import ReactiveformsModule
+                                -Form group-FormBuilder(eggGroup)-inject dependency ,Form array,Form control
+
+
+
+
