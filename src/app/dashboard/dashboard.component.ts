@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -17,16 +18,6 @@ export class DashboardComponent implements OnInit {
   pwsd1 = ""
   Amount1 = ""
 
-
-  user: any
-  constructor(private ds: DataService, private fb: FormBuilder) {
-    this.user = this.ds.currentUser
-  }
-
-
-
-
-
   // form group
   depositForm = this.fb.group({
     acno: ['', [Validators.required, Validators.pattern('[0-9]*')]],
@@ -41,12 +32,19 @@ export class DashboardComponent implements OnInit {
     Amount1: ['', [Validators.required, Validators.pattern('[0-9]*')]]
 
   })
-
-
+  user: any
+  constructor(private ds: DataService, private fb: FormBuilder, private router: Router) {
+    this.user = this.ds.currentUser
+  }
 
 
 
   ngOnInit(): void {
+    if(!localStorage.getItem("currentAcno")){
+      alert("please Log In")
+      this.router.navigateByUrl("")
+
+    }
   }
 
   deposit() {
@@ -79,9 +77,15 @@ export class DashboardComponent implements OnInit {
         alert(Amount1 + " debited successfully and new balance is: " + result)
       }
     }
-      else {
-        alert("Invalid amount")
-      }
-
+    else {
+      alert("Invalid amount")
     }
+
   }
+
+  logout() {
+    localStorage.removeItem("currentUser")
+    localStorage.removeItem("currentAcno")
+    this.router.navigateByUrl("")
+  }
+}

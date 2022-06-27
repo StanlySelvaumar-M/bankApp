@@ -67,6 +67,8 @@
 
                    9.2.1   ngIf - syntax:*ngIf="condition"
 
+                   9.2.2   ngFor- syntax:*ngFor=" let iterator of array name "
+
 
         10. local storage - to permanently store data in browser
 
