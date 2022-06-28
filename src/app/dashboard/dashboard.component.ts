@@ -32,12 +32,16 @@ export class DashboardComponent implements OnInit {
     Amount1: ['', [Validators.required, Validators.pattern('[0-9]*')]]
 
   })
+  
   user: any
+  lDate:any
   constructor(private ds: DataService, private fb: FormBuilder, private router: Router) {
     this.user = this.ds.currentUser
+    this.lDate=new Date()
+
   }
 
-
+  
 
   ngOnInit(): void {
     if(!localStorage.getItem("currentAcno")){

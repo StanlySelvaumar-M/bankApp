@@ -6,8 +6,13 @@
 </nav>
 
 <h1 style="color: rgb(218, 42, 42);">Welcome {{user}}</h1>
-<a routerLink="/transactions" style="color:white;">View Tranactions History</a>
+<h5 style="color: white;">{{lDate|date:'short'}}</h5>
+
+<a routerLink="/transactions" style="color:rgb(134, 226, 28);">View Tranactions History</a>
 <button class="btn btn-warning" (click)="logout()" style="float: right;margin-right: 20px;">Log Out</button>
+
+<app-animation-demo style="color: white;"></app-animation-demo>
+
 <hr>
 
 <div class="container col-md-12 mt-0">
